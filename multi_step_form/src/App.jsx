@@ -1,7 +1,13 @@
 import { useState } from "react";
 import FormHeader from "./components/FormHeader";
+import Plans from "./components/Plans";
 import Steps from "./components/Steps";
-import arcadeIcon from "./assets/images/icon-arcade.svg";
+import ArcadeIcon from "./assets/images/icon-arcade.svg";
+import AdvancedIcon from "./assets/images/icon-advanced.svg";
+import ProIcon from "./assets/images/icon-pro.svg";
+import CheckmarkIcon from "./assets/images/icon-checkmark.svg";
+import ThankYouIcon from "./assets/images/icon-thank-you.svg";
+
 import "./App.css";
 
 function App() {
@@ -10,6 +16,7 @@ function App() {
     name: "",
     email: "",
     phone: "",
+    plan: "",
   });
 
   function handleChange(event) {
@@ -70,19 +77,21 @@ function App() {
           )}
           {currentStep == 2 && (
             <div className="form__plans">
-              <div className="form__plan">
-                <img src={arcadeIcon} alt="arcade billing plan" />
-                <div>
-                  <h3>Arcade</h3>
-                  <p>
-                    $9<span>/mo</span>
-                  </p>
+              <Plans plans={formPlans} />
+
+              <div className="form__plan-type">
+                <p className="form__plan-type-active">Monthly</p>
+                {/* TODO: Toggle */}
+                <div className="toggle">
+                  <div className="toggleDot"></div>
                 </div>
+                <p>Yearly</p>
               </div>
             </div>
           )}
         </form>
       </div>
+
       <div className="form__footer">
         {currentStep > 1 && currentStep < 4 && (
           <button onClick={handlePreviousStep} className="form__button-back">
@@ -99,8 +108,8 @@ function App() {
 
 export default App;
 
-const plans = [
-  { id: "arcade", label: "Arcade", price: 9 },
-  { id: "advanced", label: "Advanced", price: 12 },
-  { id: "pro", label: "Pro", price: 15 },
+const formPlans = [
+  { id: "arcade", label: "Arcade", price: 9, icon: ArcadeIcon },
+  { id: "advanced", label: "Advanced", price: 12, icon: AdvancedIcon },
+  { id: "pro", label: "Pro", price: 15, icon: ProIcon },
 ];

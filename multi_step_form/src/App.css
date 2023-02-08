@@ -1,5 +1,6 @@
 #root {
   max-width: 1440px;
+  height: 100vh;
   margin: 0 auto;
   text-align: center;
 }
@@ -44,7 +45,7 @@ input {
 .container {
   background-color: var(--neutral-alabaster);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin: 100px 20px;
+  margin: -30px 20px;
   padding: 30px;
   border-radius: var(--border-radius);
 }
@@ -96,11 +97,11 @@ input {
 }
 
 .form__button-back {
-  background-color: transparent;
-  border: none;
-  color: var(--neutral-cool-gray);
-  font-weight: 700;
   margin: 20px;
+  border: none;
+  font-weight: 700;
+  color: var(--neutral-cool-gray);
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -122,8 +123,8 @@ input {
     justify-content: center;
     border-radius: 50%;
     font-size: 18px;
-    border: 1px solid var(--neutral-white);
     font-weight: 700;
+    border: 1px solid var(--neutral-white);
 }
 
 .step > p {
@@ -143,14 +144,20 @@ input {
 
 .form__plans {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 50px;
 }
 
 .form__plan {
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
+  width: 100%;
   gap: 20px;
-  border: 1px solid var(--neutral-cool-gray);
   padding: 15px 10px;
+  border: 1px solid var(--neutral-cool-gray);
   border-radius: var(--border-radius);
 }
 
@@ -158,8 +165,44 @@ input {
   display: flex;
   align-items: center;
   gap: 20px;
+  padding: 15px 10px;
   border: 1px solid var(--primary-purplish-blue);
   background-color: var(--primary-pastel-blue);
-  padding: 15px 10px;
   border-radius: var(--border-radius);
+}
+
+.form__plans > ul {
+  padding: 0;
+  width: 100%;
+}
+
+.form__plan-type {
+  background-color: var(--neutral-magnolia);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.toggle {
+  background-color: var(--primary-marine-blue);
+  border-radius: 50px;
+  width: 100px;
+  height: 20px;
+  position: relative;
+}
+
+.toggleDot {
+  background-color: var(--neutral-white);
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  border-radius: 100px;
+  height: 70%;
+  width: 15px;
+}
+
+.form__plan-type-active {
+  color: var(--primary-marine-blue);
 }
