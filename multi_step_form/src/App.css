@@ -206,3 +206,11 @@ input {
 .form__plan-type-active {
   color: var(--primary-marine-blue);
 }
+
+
+.form__addon {
+  display: flex;
+  width: 100%;
+  background-color: green;
+  height: 60px;
+}

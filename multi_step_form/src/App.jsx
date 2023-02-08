@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-      <Steps currentStep={currentStep} />
+      <Steps currentStep={currentStep} setCurrentStep={setCurrentStep} />
       <div className="container">
         {currentStep == 1 && (
           <FormHeader title="Personal info">
@@ -46,6 +46,16 @@ function App() {
         {currentStep == 2 && (
           <FormHeader title="Select your plan">
             You have the option of monthly or yearly billing.
+          </FormHeader>
+        )}
+        {currentStep == 3 && (
+          <FormHeader title="Pick add-ons">
+            Add-ons help enhance your gaming experience
+          </FormHeader>
+        )}
+        {currentStep == 4 && (
+          <FormHeader title="Finishing up">
+            Double-check everything looks OK before confirming.
           </FormHeader>
         )}
         <form className="multistep-form">
@@ -89,6 +99,18 @@ function App() {
               </div>
             </div>
           )}
+          {currentStep == 3 && (
+            <div className="form__addons">
+              <div className="form__addon">
+                <input type="checkbox" name="online" id="online" />
+                <div>
+                  <label htmlFor="online">Online service</label>
+                  <p>Access to multiplayer games</p>
+                </div>
+              </div>
+            </div>
+          )}
+          {currentStep == 4 && <div className="form__confirmation"></div>}
         </form>
       </div>
 
@@ -98,8 +120,11 @@ function App() {
             Go Back
           </button>
         )}
+
+        <ButtonNext handleNextStep={handleNextStep} />
+
         <button className="form__button" onClick={handleNextStep}>
-          Next Step
+          {currentStep == 4 ? "Confirm" : "Next Step"}
         </button>
       </div>
     </div>
@@ -107,6 +132,12 @@ function App() {
 }
 
 export default App;
+
+function ButtonNext({ handleNextStep }) {
+  <button className="form__button" onClick={handleNextStep}>
+    Next
+  </button>;
+}
 
 const formPlans = [
   { id: "arcade", label: "Arcade", price: 9, icon: ArcadeIcon },
