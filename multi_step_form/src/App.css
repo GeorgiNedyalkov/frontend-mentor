@@ -1,42 +1,95 @@
 #root {
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+  min-height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 700;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1, label {
+  color: var(--primary-marine-blue);
 }
 
-.card {
-  padding: 2em;
+p {
+  color: var(--neutral-cool-gray);
+  width: 80%;
+  line-height: 1.6rem;
+  text-align: left;
 }
 
-.read-the-docs {
-  color: #888;
+label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+input {
+  background-color: transparent;
+  border: 1px solid var(--neutral-cool-gray);
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.container {
+  background-color: var(--neutral-alabaster);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 100px 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.multistep-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+.form__header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.form__footer {
+  background-color: white;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.form__button {
+  width: 100px;
+  height: 40px;
+  margin: 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-marine-blue);
 }

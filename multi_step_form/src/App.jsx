@@ -1,34 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import FormHeader from "./components/FormHeader";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [currentStep, setCurrentStep] = useState(1);
+  const [userForm, setUserForm] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+  });
+
+  function handleNextStep() {
+    setCurrentStep(currentStep + 1);
+  }
+
+  function handlePreviousStep() {
+    setCurrentStep(currentStep - 1);
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="container">
+        <p>{currentStep}</p>
+        <FormHeader title="Personal info">
+          Please provide your name, email address, and phone number.
+        </FormHeader>
+        <form className="multistep-form">
+          <div className="form__field">
+            <label htmlFor="name">Name</label>
+            <input id="name" type="text" placeholder="e.g. Stephen King" />
+          </div>
+          <div className="form__field">
+            <label htmlFor="email">Email Address</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="e.g. stephenking@lorem.com"
+            />
+          </div>
+          <div className="form__field">
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              id="phone"
+              type="number"
+              placeholder="e.g. + 1 234 567 890"
+            />
+          </div>
+        </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div className="form__footer">
+        <button className="form__button" onClick={handleNextStep}>
+          Next Step
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
