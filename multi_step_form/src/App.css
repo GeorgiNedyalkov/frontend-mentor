@@ -17,7 +17,7 @@ h1 {
   font-weight: 700;
 }
 
-h1, label {
+h1, h2, h3, h4, h5, h6, label {
   color: var(--primary-marine-blue);
 }
 
@@ -46,7 +46,7 @@ input {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin: 100px 20px;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 .multistep-form {
@@ -81,7 +81,7 @@ input {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
 }
 
 .form__button {
@@ -92,6 +92,16 @@ input {
   border: none;
   border-radius: 5px;
   background-color: var(--primary-marine-blue);
+  cursor: pointer;
+}
+
+.form__button-back {
+  background-color: transparent;
+  border: none;
+  color: var(--neutral-cool-gray);
+  font-weight: 700;
+  margin: 20px;
+  cursor: pointer;
 }
 
 .steps {
@@ -100,7 +110,7 @@ input {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background-image: url(./assets/bg-sidebar-mobile.svg);
+  background-image: url(./assets/images/bg-sidebar-mobile.svg);
   background-size: cover;
 }
 
@@ -129,4 +139,27 @@ input {
 
 .active > p {
   color: var(--primary-marine-blue);
+}
+
+.form__plans {
+  width: 100%;
+}
+
+.form__plan {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid var(--neutral-cool-gray);
+  padding: 15px 10px;
+  border-radius: var(--border-radius);
+}
+
+.form__plan-active {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid var(--primary-purplish-blue);
+  background-color: var(--primary-pastel-blue);
+  padding: 15px 10px;
+  border-radius: var(--border-radius);
 }

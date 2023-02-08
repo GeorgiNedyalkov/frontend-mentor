@@ -27,6 +27,9 @@
   --neutral-magnolia: hsl(217, 100%, 97%);
   --neutral-alabaster: hsl(231, 100%, 99%);
   --neutral-white: hsl(0, 0%, 100%);
+
+  /* border */
+  --border-radius: 10px;
 }
 
 *,
