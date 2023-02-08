@@ -93,3 +93,40 @@ input {
   border-radius: 5px;
   background-color: var(--primary-marine-blue);
 }
+
+.steps {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-image: url(./assets/bg-sidebar-mobile.svg);
+  background-size: cover;
+}
+
+.step {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+    border: 1px solid var(--neutral-white);
+    font-weight: 700;
+}
+
+.step > p {
+  text-align: center;
+  color: var(--neutral-white);
+  font-weight: 400;
+}
+
+.active {
+  background-color: var(--primary-light-blue);
+  border: 1px solid var(--primary-light-blue);
+}
+
+.active > p {
+  color: var(--primary-marine-blue);
+}

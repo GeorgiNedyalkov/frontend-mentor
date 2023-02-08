@@ -7,8 +7,15 @@ function App() {
   const [userForm, setUserForm] = useState({
     name: "",
     email: "",
-    phoneNumber: "",
+    phone: "",
   });
+
+  function handleChange(event) {
+    setUserForm({
+      ...userForm,
+      [event.target.id]: [event.target.value],
+    });
+  }
 
   function handleNextStep() {
     setCurrentStep(currentStep + 1);
@@ -20,8 +27,8 @@ function App() {
 
   return (
     <div className="App">
+      <Steps currentStep={currentStep} />
       <div className="container">
-        <p>{currentStep}</p>
         <FormHeader title="Personal info">
           Please provide your name, email address, and phone number.
         </FormHeader>
@@ -42,6 +49,8 @@ function App() {
             <label htmlFor="phone">Phone Number</label>
             <input
               id="phone"
+              value={userForm.phoneNumber}
+              onChange={handleChange}
               type="number"
               placeholder="e.g. + 1 234 567 890"
             />
@@ -58,3 +67,23 @@ function App() {
 }
 
 export default App;
+
+function Steps({ currentStep }) {
+  return (
+    <div className="steps">
+      {[1, 2, 3, 4].map((step) => {
+        return <Step key={step} number={step} currentStep={currentStep} />;
+      })}
+    </div>
+  );
+}
+
+function Step({ number, currentStep }) {
+  const isCurrentStep = number === currentStep;
+
+  return (
+    <div className={isCurrentStep ? "step active" : "step"}>
+      <p>{number}</p>
+    </div>
+  );
+}
