@@ -1,0 +1,29 @@
+.sidepanel {
+    background-color: var(--very-dark-grayish-blue);
+    color: white;
+    width: 400px;
+    padding: 2rem;
+    margin-left: 50px;
+}
+
+.sidepanel__title {
+    font-size: 3rem;
+    color: var(--primary-orange);
+}
+
+.sidepanel__list-item-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.sidepanel__list-item-title:hover {
+    color: var(--primary-orange);
+}
+
+.sidepanel__list-item-text {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 10px;
+}
+

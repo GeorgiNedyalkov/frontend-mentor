@@ -1,0 +1,31 @@
+.articles {
+    display: flex;
+    gap: 20px;
+}
+
+.article {
+    display: flex;
+    gap: 20px;
+}
+
+.article__id {
+    font-size: 2rem;
+    color: var(--dark-grayish-blue);
+    font-weight: 700;
+    opacity: 35%;
+}
+
+.article__image {
+    height: 200px;
+}
+
+.article__title {
+    font-weight: 800;
+    color: var(--very-dark-grayish-blue);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.article__title:hover {
+    color: var(--primary-red);
+}
