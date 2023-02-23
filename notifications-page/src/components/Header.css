@@ -1,0 +1,24 @@
+/* header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header__left {
+  display: flex;
+  gap: 10px;
+}
+
+.notification__count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: var(--primary-blue);
+  color: var(--neutral-light-grayish-blue-1);
+}

@@ -1,13 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   line-height: 1.5;
+  font-size: 16px;
   font-weight: 400;
-
-  background-color: #242424;
-
+  background-color: var(--neutral-light-grayish-blue-2);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* colors */
+  --primary-red: hsl(1, 90%, 64%);
+  --primary-blue: hsl(219, 85%, 26%);
+
+  --neutral-white: hsl(0, 0, 100%);
+  --neutral-light-grayish-blue-1: hsl(211, 68%, 98%);
+  --neutral-light-grayish-blue-2: hsl(205, 33%, 90%);
+  --neutral-grayish-blue: hsl(219, 14%, 63%);
+  --neutral-dark-grayish-blue: hsl(219, 12%, 42%);
+  --neutral-very-dark-blue: hsl(224, 21%, 14%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+p {
+  font-size: 0.875rem;
+  color: var(--neutral-grayish-blue);
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  max-width: 50vw;
+  min-width: 400px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* notification */
+.notification {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+
+.unread {
+  background-color: var(--neutral-light-grayish-blue-1);
+  color: green;
+}
+
+.notification__avatar {
+  height: 50px;
+  width: 50px;
+}
+
+.notification__username {
+  color: var(--neutral-very-dark-blue);
+  font-weight: 700;
+}
+
+.notification__username:hover {
+  color: var(--primary-blue);
+}
+
+.notification__post-reaction {
+  color: var(--neutral-grayish-blue);
+  font-weight: 700;
+}
+
+.notification__timestamp {
+  font-size: 0.875rem;
+  color: var(--neutral-grayish-blue);
+}
+
+.notification__group {
+  color: var(--primary-blue);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.notification__picture {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.dot {
+  background-color: var(--primary-red);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.message {
+  margin-top: 10px;
+  border: 1px solid var(--neutral-light-grayish-blue-2);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message:hover {
+  background-color: var(--neutral-light-grayish-blue-2);
+}
+
+.mark-all {
+  cursor: pointer;
+}
+
+.mark-all:hover {
+  color: var(--primary-blue);
 }
