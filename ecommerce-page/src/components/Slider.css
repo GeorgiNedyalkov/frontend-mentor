@@ -1,0 +1,27 @@
+.slider__image {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+.next_icon, .prev_icon {
+    top: 200px;
+    background-color: var(--white);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding: 10px;
+    position: absolute;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.prev_icon {
+    left: 20px;
+}
+
+.next_icon {
+    right: 20px;
+}

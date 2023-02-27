@@ -1,7 +1,14 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <div className="container">
+        <Navbar />
+        <hr />
+        <Hero />
+      </div>
     </div>
   );
 }
