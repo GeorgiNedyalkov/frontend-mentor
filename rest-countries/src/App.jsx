@@ -1,9 +1,15 @@
 import Countries from "./components/Countries";
+import Searchbar from "./components/Searchbar";
 import Header from "./components/Header";
 import { useEffect, useState } from "react";
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const filteredCountries = countries.filter((country) =>
+    country.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   useEffect(() => {
     const getCountries = async () => {
@@ -21,7 +27,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Countries countries={countries} />
+      <Searchbar search={search} setSearch={setSearch} />
+      <Countries countries={filteredCountries} />
     </div>
   );
 }
