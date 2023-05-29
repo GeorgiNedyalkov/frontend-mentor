@@ -1,11 +1,16 @@
-.header {
-    background-color: var(--dark-blue);
-    height: 80px;
+.header-container {
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
+}
+
+.header {
+    background-color: var(--dark-blue);
+    height: 80px;
     padding: 20px;
-    margin-bottom: 10px;
 }
 
 .header__title {

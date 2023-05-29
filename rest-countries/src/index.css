@@ -32,28 +32,29 @@
   padding: 0;
 }
 
-
+h1 {
+  font-size: 1rem;
+}
 
 h2 {
   margin-bottom: 20px;
 }
 
-.country {
-  background-color: var(--dark-blue);
-  margin-bottom: 50px;
-  border-radius: 10px;
-  margin: 40px;
-  cursor: pointer;
+li {
+  list-style-type: none;
 }
 
-.country__flag {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  border-radius: 10px 10px 0px 0px;
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  } 
 }
 
-.country__info {
-  padding: 20px;
-  padding-bottom: 50px;
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
 }
+
+
+
+

@@ -1,0 +1,15 @@
+.toggle {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    background-color: var(--text-dark-grayish-blue);
+    border-radius: 20px;
+}
+
+.dot {
+    margin: 3px;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background-color: var(--card-bg-light-grayish-blue);
+}

@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
+import "./Countries.css";
+
 const Countries = ({ countries }) => {
   return (
-    <ul>
+    <ul className="countries">
       {countries.map((country, countryId) => {
         return (
           <li key={countryId}>
-            <CountryCard {...country} />
+            <CountryCard id={countryId} {...country} />
           </li>
         );
       })}
@@ -12,11 +15,13 @@ const Countries = ({ countries }) => {
   );
 };
 
-const CountryCard = ({ name, population, region, capital, flag }) => {
+const CountryCard = ({ id, name, population, region, capital, flag }) => {
   return (
     <article className="country">
       <div className="country__flag-container">
-        <img className="country__flag" src={flag} alt="country flag" />
+        <Link to={`/${id}`} state={id}>
+          <img className="country__flag" src={flag} alt="country flag" />
+        </Link>
       </div>
       <div className="country__info">
         <h2>{name}</h2>

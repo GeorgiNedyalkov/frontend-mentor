@@ -1,0 +1,31 @@
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select:focus{
+    overflow-y: auto;
+}
+
+.filter-region {
+    margin-left: 20px;
+    margin-bottom: 30px;
+    width: 200px;
+    padding: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark-blue);
+}
+
+.select__wrapper {
+    position: relative;
+}
+
+.select__wrapper::after {
+    content: "▼";
+    font-size: 1rem;
+    top: 19px;
+    left: 190px;
+    position: absolute;
+}

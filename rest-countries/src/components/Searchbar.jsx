@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { GoSearch } from "react-icons/go";
 import "./Searchbar.css";
 
