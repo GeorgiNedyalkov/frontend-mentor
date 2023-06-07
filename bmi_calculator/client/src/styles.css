@@ -1,0 +1,226 @@
+@font-face {
+  font-family: InterFont;
+  src: url("./assets/fonts/Inter-VariableFont_slnt\,wght.ttf"),
+  url("./assets/fonts/static/Inter-Regular.ttf"),
+  url("./assets/fonts/static/Inter-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: InterFontSemiBold;
+  src: url("./assets/fonts/static/Inter-SemiBold.ttf")
+}
+
+:root {
+  font-family: InterFont;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Colors */
+  --blue: hsl(227, 92%, 58%);
+  --gunmetal: hsl(215, 31%, 21%);
+  --dark-electric-blue: hsl(215, 17%, 45%);
+  --borders: hsl(200, 24%, 88%);
+  --pure-white: hsl(0, 0, 100%);
+  --hero-background-gradient: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(229,246,255,1) 0%, rgba(169,206,250,0.5) 100%); 
+  --results-background-gradient: linear-gradient(166deg, rgba(52,95,246,1) 0%, rgba(88,125,255,1) 100%);
+  --background-base: hsl(203, 92%, 95%);
+  --font-base: var(var(--dark-electric-blue));
+
+  /* Sizes */
+  --heading-xl: 64px;
+  --heading-l: 48px;
+  --heading-m: 24px;
+  --heading-s: 20px;
+  --radius: 35px;
+  --results-radius: 10px
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  color: var(--gunmetal);
+  font-weight: 700;
+}
+
+h1 {
+  margin-top: 50px;
+  font-size: var(--heading-l);
+}
+
+h2 {
+  font-size: var(--heading-m);
+  margin-bottom: 32px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: var(--dark-electric-blue);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 640px;
+  background-color: var(--blue);
+  background: var(--hero-background-gradient);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+form {
+  margin-bottom: 24px;
+}
+
+label {
+  color: var(--font-base);
+}
+
+section {
+  margin: 0;
+  padding: 24px;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero__logo_container {
+  width: 40px;
+  height: 40px;
+}
+
+.hero__logo {
+  margin-top: 32px;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__title {
+  width: 70%;
+  margin-bottom: 24px;
+}
+
+.hero__copy {
+  width: 80%;
+}
+
+/* BMI Calculator */
+#calculator__bmi {
+  margin: 24px;
+  background-color: white;
+  box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+  border-radius: 16px;
+  position: absolute;
+  top: 500px;
+  z-index: 1;
+}
+
+.units {
+  display: flex;
+  justify-content: space-between;
+}
+
+.results {
+  padding: 32px;
+  border-radius: 16px;
+  background-color: var(--blue);
+  background: var(--results-background-gradient);
+}
+
+.results h3 {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.results p {
+  color: white;
+  font-size: 14px;
+}
+
+.result {
+  font-size: var(--heading-l);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 24px;
+}
+
+/* Benefits */
+
+#benefits{
+  margin-top: 400px;
+  background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+  margin-bottom: 72px;
+}
+
+.benefits__text {
+  margin-bottom: 32px;
+}
+
+.img__man-eating-container {
+  margin-bottom: 48px;
+  width: 375px;
+  height: 354.39px;
+}
+
+.img__man-eating {
+  width: 100%;
+}
+
+.benefit {
+  margin-bottom: 40px;
+}
+
+.benefit__icon {
+  margin-bottom: 32px;
+}
+
+.benefit__title {
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+/* Limitations */
+#limitations {
+  background-color: var(--borders);
+
+}
+
+.limitation {
+  margin: 16px;
+  padding: 24px;
+  box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+  border-radius: 16px;
+}
+
+.limitations__text {
+  margin-bottom: 56px;
+}
+
+.limitation__title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
