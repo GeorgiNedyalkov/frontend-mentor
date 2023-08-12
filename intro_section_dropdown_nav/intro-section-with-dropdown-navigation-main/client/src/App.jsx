@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+import Navigation from "./components/Navigation";
+
 import HeroImage from "./assets/image-hero-mobile.png";
 import Logo from "./assets/logo.svg";
 import Audiophile from "./assets/client-audiophile.svg";
@@ -7,15 +11,27 @@ import Meet from "./assets/client-meet.svg";
 import IconMenu from "./assets/icon-menu.svg";
 
 function App() {
+    const [isActiveNav, setIsActiveNav] = useState(false);
     return (
-        <>
+        <div className="realtive">
             <div className="mb-10">
                 <header className="p-4 h-16 flex items-center justify-between">
                     <img src={Logo} alt="" />
-                    <img src={IconMenu} alt="" />
+                    <img
+                        onClick={() => setIsActiveNav(!isActiveNav)}
+                        src={IconMenu}
+                        alt=""
+                    />
                 </header>
                 <img src={HeroImage} alt="hero image" />
             </div>
+
+            {isActiveNav && (
+                <Navigation
+                    isActiveNav={isActiveNav}
+                    setIsActiveNav={setIsActiveNav}
+                />
+            )}
 
             <div className="p-4 flex flex-col items-center justify-center mb-4">
                 <h1 className="text-4xl font-bold mb-5">Make remote work</h1>
@@ -34,7 +50,7 @@ function App() {
                 <img className="w-16" src={Meet} alt="" />
                 <img className="w-16" src={Maker} alt="" />
             </div>
-        </>
+        </div>
     );
 }
 
